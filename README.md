@@ -45,7 +45,6 @@ Finished! Selected model with minimal training error rate (BCER) = 9.897
 
 At iteration 495/500/500, mean rms=1.359%, delta=6.184%, BCER train=9.897%, BWER train=27.562%, skip ratio=0.000%, New best BCER = 9.897 Transitioned to stage 1 wrote checkpoint.
 
-
 ___
 
 to check with image 
@@ -57,3 +56,34 @@ tesseract path/to/your/image.tif output_file_name --oem 1 --psm 3 -l Noto_Serif_
 * Replace path/to/your/image.tif with the path to the image you want to process.
 * output_file_name is the name of the file where the OCR result will be saved (without the extension).
 * The -l Noto_Serif_Tibetan option tells Tesseract to use your trained model.
+
+here are some images to check 
+/Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check1.png
+/Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check2.png
+
+output it to: 
+/Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs
+
+You can use thus use these commands to run through it:
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check1.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/check1 --oem 1 --psm 3 -l Noto_Serif_Tibetan
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check2.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/check2 --oem 1 --psm 3 -l Noto_Serif_Tibetan
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check3.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/check3 --oem 1 --psm 3 -l Noto_Serif_Tibetan
+
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check4.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/check4 --oem 1 --psm 3 -l Noto_Serif_Tibetan
+
+here is my test against the regular tesseract code: 
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check1.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/tesseract_check1 --oem 1 --psm 3 -l bod
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check2.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/tesseract_check2 --oem 1 --psm 3 -l bod
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check3.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/tesseract_check3 --oem 1 --psm 3 -l bod
+
+tesseract /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/Images/check4.png /Users/jinpa/Desktop/PROJECTS/Training_OCR/my_runs/tesseract_check4 --oem 1 --psm 3 -l bod
+
+
+note that this is where the trained data (Noto_Serif_Tibetan.traineddata) exists: 
+/Users/jinpa/Desktop/PROJECTS/Training_OCR/tesseract/tessdata/
+therefore this is what the $TESSDATA_PREFIX should be set to 
